@@ -67,3 +67,8 @@ npm test
 This script will start the Karma test runner to execute the unit tests. Moreover, Karma will start
 watching the source and test files for changes and then re-run the tests whenever any of them
 changes.
+
+Screenshots
+=============
+![Alt text](./screenshots/Screen Shot 2017-03-08 at 2.13.23 AM.png?raw=true "Preference Selection App Screen")
+![Alt text](./screenshots/Screen Shot 2017-03-08 at 2.13.42 AM.png?raw=true "Preference Selection App Screen")
