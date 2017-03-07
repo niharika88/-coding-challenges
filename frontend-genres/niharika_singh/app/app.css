@@ -1,0 +1,51 @@
+
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.flex {
+	display: flex;
+  flex-direction:  row;
+  align-content: stretch;
+}
+
+body {
+  background-color: black !important;
+}
+
+tbody {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.center-btn {
+  display: flex;
+  justify-content: stretch;
+}
+
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}

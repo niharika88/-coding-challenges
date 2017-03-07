@@ -1,0 +1,32 @@
+<div ng-app='myApp'>
+  <div ng-controller='View1Ctrl as ctrl'>
+    <div class="flex" ng-repeat="item in genres">
+      <div class="card" style="width: 20rem;background-color:black;border-width:thin" ng-repeat="(key,value) in item ">
+        <img class="card-img-top" src="https://image.flaticon.com/icons/svg/148/148724.svg" alt="Card image cap">
+        <div class="card-block" style="margin:auto;">
+          <h4 class="card-title" style="font-weight:bold;font-size:30px;color:limegreen">~ {{value.name}} ~</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" style="margin:auto;color:orange;background-color:black" ng-repeat="artist in value.artists | limitTo:quantity">{{artist.name}}</li>
+          <div class="card-block" style="margin:auto">
+            <button class="btn btn-danger" ng-if="$storage.selected_genres.includes(value.id)" ng-model="clicked_item" ng-click="changeValue(value)">Remove me. :(</button>
+            <button class="btn btn-success" ng-if="!$storage.selected_genres.includes(value.id)" ng-model="clicked_item" ng-click="changeValue(value)">Add me!</button>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div class="flex">
+      <div class="btn btn-primary btn-lg" style="width: 20rem;background-color:black" ng-repeat="genre in $storage.selected_genres_names">
+        {{genre}}
+      </div>
+    </div>
+    <div>
+      <button class ="btn btn-block btn-primary btn-lg" ng-click="savePreference() ">Save Genre Preferences
+      </button>
+      <div class="alert alert-success" ng-show="showSuccessAlert">
+        <button type="button" class="close" data-ng-click="switchBool('showSuccessAlert')">×
+        </button> <strong>Done!</strong>{{successTextAlert}}
+      </div>
+    </div>
+  </div>
+</div>
